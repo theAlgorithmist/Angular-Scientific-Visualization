@@ -72,8 +72,6 @@ export class SvgDrawNormalDirective implements OnInit, OnChanges
   @Output ('drawingUpdated')
   protected _drawingUpdated: EventEmitter<numericTriple>;
 
-  protected _div: HTMLDivElement;        // direct reference to the <div> for possible future use
-
   protected _surface: SVG.Doc;            // SVG Doc that serves as a Canvas
 
   // container dimensions in pixels
@@ -113,11 +111,10 @@ export class SvgDrawNormalDirective implements OnInit, OnChanges
     this._drawingUpdated = new EventEmitter<numericTriple>();
 
     // initialize the SVG surface and get prepped for drawing
-    this._div        = this._elementRef.nativeElement;
-    this._width      = this._div.clientWidth;
-    this._height     = this._div.clientHeight;
+    this._width  = this._elementRef.nativeElement.clientWidth;
+    this._height = this._elementRef.nativeElement.clientHeight;
 
-    this._surface = SVG(this._div).size('100%', '100%').viewbox(0, 0, this._width, this._height);
+    this._surface = SVG(this._elementRef.nativeElement).size('100%', '100%').viewbox(0, 0, this._width, this._height);
   }
 
   /**
