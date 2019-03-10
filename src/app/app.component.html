@@ -1,0 +1,34 @@
+<!-- Primary container has a primitive card appearance with the SVG rendering on a DIV inside it -->
+<div class="card-container bounded">
+  <div svgDrawNormal class="graph" hBuffer="10" vBuffer="5" hSpan="8" vSpan="1" (drawingUpdated)="onDrawingUpdated($event)"></div>
+
+  <div class="card-footer">
+    <div align="center">
+      <!-- these are the parameters that could be used to set the bounds of a function graphing component -->
+      <p class="smallTxt"><span>min-x: {{xMin | number: '1.1-2'}}</span>
+        <span class="lm10">max-x: {{xMax | number: '1.1-2'}}</span>
+        <span class="lm10">max-normal: {{maxNormal | number: '1.1-2'}}</span>
+      </p>
+    </div>
+
+    <!-- simple controls for normal distribution params ... and I mean simple :) -->
+    <div align="center" class="controls">
+      <span class="rm10">Normal Distribution Params: </span>
+      <span class="rm10">
+        <label for="mean">Mean</label>
+        <input type="number" id="mean" min="-3" max="3" [(ngModel)]="mu" (ngModelChange)="onChange();" required>
+      </span>
+
+      <span class="rm10">
+        <label for="std">Std. Dev.</label>
+        <input type="number" id="std" min="0.4" max="1.0" step="0.1" [(ngModel)]="sigma" (ngModelChange)="onChange();" required>
+      </span>
+
+      <span>
+        <label for="x-value">X Value</label>
+        <input type="number" id="x-value" [(ngModel)]="x" (ngModelChange)="onChange();" required>
+      </span>
+    </div>
+  </div>
+</div>
+
