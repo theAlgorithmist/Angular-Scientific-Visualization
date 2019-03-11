@@ -252,7 +252,7 @@ export class SvgDrawNormalDirective implements OnInit, OnChanges
       {
         // moveTo
         path = 'M ' + ((quad.x0-a)*this._pxPerUnitX + hBuffer).toFixed(3) +
-               ',' + (vBuffer + (this._vSpan-quad.y0)*this._pxPerUnitY + vBuffer).toFixed(3);
+               ',' + (vBuffer + (this._vSpan-quad.y0)*this._pxPerUnitY).toFixed(3);
       }
 
       // quadBezierTo
