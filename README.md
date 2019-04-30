@@ -1,6 +1,6 @@
 # Angular Normal Distribution Graphing
 
-This is the code base for the Medium article, _Scientific Visualization With Angular_ (insert url).
+This is the code base for the Medium article, [Scientific Visualization With Angular](https://medium.com/ngconf/scientific-visualization-with-angular-24f2539aef23).
 
  
 Author:  Jim Armstrong - [The Algorithmist](http://www.algorithmist.net)
